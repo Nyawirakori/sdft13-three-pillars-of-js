@@ -32,6 +32,9 @@ function renderTransactions(transactions){
          <td>
              <button onclick='removeTransaction(${transaction.id})' class='btn btn-danger btn-sm'>X</button>
          </td>
+         <td>
+            <button onclick='updateTransaction(${transaction.id})' class='btn btn-primary btn-sm'>Update</button>
+         </td> 
         </tr>
         `
     })
@@ -45,4 +48,10 @@ function removeTransaction(id){
     })
     transactions = [...filteredTransactions]
     renderTransactions(transactions)
+}
+
+//Updating a transaction
+function updateTransaction(id){
+    const transaction = transactions.find(transaction => transaction.id === id)
+     const newAmount = prompt("Enter the new amount of your transaction") 
 }
